@@ -24,4 +24,4 @@ Run the script:
 python bruteforce.py
 ```
 
-The decrypted file is named after 'decrypted_file_weak_password.pdf'
+The decrypted file is named after `decrypted_file_weak_password.pdf`
