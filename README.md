@@ -16,7 +16,7 @@ pip install -r requirements.txt
 
 Copy your PDF file to this repo folder.
 
-Rename it to 'file_weak_password.pdf'
+Rename it to `file_weak_password.pdf`.
 
 Run the script:
 
@@ -24,4 +24,4 @@ Run the script:
 python bruteforce.py
 ```
 
-The decrypted file is named after `decrypted_file_weak_password.pdf`
+The decrypted file is named after `decrypted_file_weak_password.pdf`.
