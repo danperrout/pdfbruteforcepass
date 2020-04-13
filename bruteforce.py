@@ -8,29 +8,32 @@ from datetime import datetime
 import os
 import sys
 
+
 def decrypt_pdf(input_path, output_path, password):
-  with open(input_path, 'rb') as input_file, \
-    open(output_path, 'wb') as output_file:
-    reader = PdfFileReader(input_file)
-    reader.decrypt(password)
+    with open(input_path, 'rb') as input_file, \
+            open(output_path, 'wb') as output_file:
+        reader = PdfFileReader(input_file)
+        reader.decrypt(password)
 
-    writer = PdfFileWriter()
+        writer = PdfFileWriter()
 
-    for i in range(reader.getNumPages()):
-      writer.addPage(reader.getPage(i))
+        for i in range(reader.getNumPages()):
+            writer.addPage(reader.getPage(i))
 
-    writer.write(output_file)
+        writer.write(output_file)
+
 
 def decrypt_with_pass(x, arquivo):
-    password = ("{:05d}".format(x))      
+    password = ("{:05d}".format(x))
     try:
         decrypt_pdf(arquivo, 'decrypted_'+arquivo, password)
-        print("Sucesso!")
+        print("Success!")
         print(password+' - OK')
         return True
     except:
-        print (password, end="\r")
+        print(password, end="\r")
         return False
+
 
 if __name__ == '__main__':
     inicio = datetime.now()
@@ -43,8 +46,8 @@ if __name__ == '__main__':
         if(decrypt_with_pass(x, arquivo)):
             break
 
-    final  = datetime.now()                     
+    final = datetime.now()
     duration = final - inicio
 
-    print('     >> FIM! ')                        
+    print('     >> FIM! ')
     print('     >> Duração da execução do script: '+str(duration))
